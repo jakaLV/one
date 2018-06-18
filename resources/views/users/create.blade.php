@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1> Hello stats </h1>
+    <h1> Izveido lietotaju </h1>
+
 @endsection

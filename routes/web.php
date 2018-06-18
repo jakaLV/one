@@ -12,9 +12,12 @@
 */
 
 Route::get('/','PagesController@index');
-
-Route::get('/stats','PagesController@stats');
-
+Route::get('/admin','PagesController@admin');
 Route::get('/about','PagesController@about');
+//Route::get('/sodi','PagesController@sodi');
 
-Route::get('/sodi','PagesController@sodi');
+Route::resource('sods', 'SodiController');
+Route::resource('user', 'UserController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

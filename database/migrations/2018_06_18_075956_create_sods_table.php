@@ -15,6 +15,9 @@ class CreateSodsTable extends Migration
     {
         Schema::create('sods', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('auto');
+            $table->string('summa');
+            $table->string('vieta');
             $table->timestamps();
         });
     }

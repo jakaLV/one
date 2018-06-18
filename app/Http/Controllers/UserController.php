@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Sods;
-use DB;
 
-class SodiController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +13,7 @@ class SodiController extends Controller
      */
     public function index()
     {
-        //$sods = Sods::orderBy('summa','desc')->get();
-        $sods = Sods::all();
-        return view('sodi.index')->with('sods',$sods);
+        //
     }
 
     /**
@@ -27,7 +23,7 @@ class SodiController extends Controller
      */
     public function create()
     {
-        //
+        //return view('')
     }
 
     /**
@@ -60,7 +56,7 @@ class SodiController extends Controller
      */
     public function edit($id)
     {
-        //
+        
     }
 
     /**
