@@ -7,7 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Sods extends Model
 {
-    public function user(){
-        return $this->belongsTo('App\User');
-    }
+   
 }

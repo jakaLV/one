@@ -5,7 +5,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sods extends Model
+class SodsDep extends Model
 {
     public function user(){
         return $this->belongsTo('App\User');

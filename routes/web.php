@@ -12,12 +12,26 @@
 */
 
 Route::get('/','PagesController@index');
-Route::get('/admin','PagesController@admin');
 Route::get('/about','PagesController@about');
-//Route::get('/sodi','PagesController@sodi');
 
 Route::resource('sods', 'SodiController');
 Route::resource('user', 'UserController');
-Auth::routes();
+//Route::resource('language', 'LanguageController');
 
+Auth::routes();
+Route::get('/language/lv', 'LanguageController@lv');
+Route::get('/language/en', 'LanguageController@en');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/admin', function(){
+    return view('mail.pastnieks');
+});
+
+Route::post('/sendmail', function(\Illuminate\Http\Request $request, \Illuminate\Mail\Mailer $mailer){
+$mailer->to($request->input('mail'))->send(new \App\Mail\Mymail($request->input('title')));
+return redirect('/sods');
+})->name('sendmail');
+
+Route::get('protected', ['middleware' => ['auth', 'admin'], function() {
+    return "this page requires that you be logged in and an Admin";
+}]);

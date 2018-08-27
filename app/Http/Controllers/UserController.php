@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\User;
+use DB;
 class UserController extends Controller
 {
     /**
@@ -13,7 +14,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        
+        $user = User::where('type', 'Admin');
+        return view('pages.admin')->with('user',$user);
     }
 
     /**
@@ -24,6 +27,8 @@ class UserController extends Controller
     public function create()
     {
         //return view('')
+        $user = User::all();
+        return view('users.create')->with('user',$user);
     }
 
     /**

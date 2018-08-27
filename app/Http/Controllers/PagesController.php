@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Sods;
+
 
 class PagesController extends Controller
 {
@@ -12,10 +14,10 @@ class PagesController extends Controller
     public function admin(){
         return view('pages.admin');
     }
-    public function sodi(){
-        $title = 'Say hello to sodi';
-        return view('pages.sodi')->with('title', $title);
-    }
+    //public function sodi(){
+       
+      //  return view('pages.sodi');
+    //
     public function about(){
         return view('pages.about');
     }
